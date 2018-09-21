@@ -22,11 +22,6 @@ public:
 
 	int getType();
 
-	bool operator == (const Point& point)
-	{
-		return (this->x == point.x) && (this->y = point.y);
-	}
-
 	~Point();
 };
 

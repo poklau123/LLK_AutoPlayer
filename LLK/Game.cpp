@@ -34,6 +34,8 @@ bool Game::init(vector<int> arr)
 			this->matrix[y][x].setType(arr[pos++]);
 		}
 	}
+
+	return true;
 }
 
 int Game::getPointType(int x, int y)
@@ -77,6 +79,8 @@ bool Game::isTwoPointDirectlyLinkable(Point* a, Point* b)
 		}
 		return true;
 	}
+	
+	return false;
 }
 
 vector<Point> Game::getNeighborEmptyPoint(Point* point)
@@ -184,4 +188,8 @@ void Game::printMatrix()
 
 Game::~Game()
 {
+	for (int y = 0; y < this->height; y++)
+	{
+		delete[] this->matrix[y];
+	}
 }
