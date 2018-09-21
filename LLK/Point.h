@@ -1,6 +1,6 @@
 #pragma once
 
-#define EMPTY_POINT 0
+#define EMPTY_POINT -1
 
 class Point
 {
@@ -11,6 +11,7 @@ public:
 	int y;
 
 	Point();
+
 	Point(int x, int y, int type);
 
 	bool isEmpty();
@@ -20,6 +21,11 @@ public:
 	void setType(int type);
 
 	int getType();
+
+	bool operator == (const Point& point)
+	{
+		return (this->x == point.x) && (this->y = point.y);
+	}
 
 	~Point();
 };

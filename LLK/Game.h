@@ -1,29 +1,32 @@
 #pragma once
 #include "Point.h"
+#include <vector>
+#include <iostream>
+using namespace std;
 
 class Game
 {
-private:
-	int width;
-	int height;
 public:
 	Point** matrix;
+	int width;
+	int height;
 
+	Game();
 	Game(int _width, int _height);
 
-	bool init(int* arr);
+	bool init(vector<int> arr);
 
 	int getPointType(int x, int y);
 
 	bool isTwoPointDirectlyLinkable(Point* a, Point* b);
 
-	Point* getNeighborEmptyPoint(Point* point);
+	vector<Point> getNeighborEmptyPoint(Point* point);
 
 	bool isTwoPointLinkable(Point* a, Point* b);
 
-	Point* getPoint(int x, int y);
+	Point getPoint(int x, int y);
 
-	void linkTwoPoint(Point* a, Point* b);
+	bool linkTwoPoint(Point* a, Point* b);
 
 	void printMatrix();
 

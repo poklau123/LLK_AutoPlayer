@@ -4,6 +4,7 @@
 
 Point::Point()
 {
+	this->type = EMPTY_POINT;
 }
 
 Point::Point(int x, int y, int type = EMPTY_POINT)
