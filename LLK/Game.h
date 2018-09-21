@@ -24,7 +24,7 @@ public:
 
 	bool isTwoPointLinkable(Point* a, Point* b);
 
-	Point getPoint(int x, int y);
+	Point* getPoint(int x, int y);
 
 	bool linkTwoPoint(Point* a, Point* b);
 

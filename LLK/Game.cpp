@@ -139,9 +139,9 @@ bool Game::isTwoPointLinkable(Point * a, Point * b)
 	return false;
 }
 
-Point Game::getPoint(int x, int y)
+Point* Game::getPoint(int x, int y)
 {
-	return this->matrix[y][x];
+	return &(this->matrix[y][x]);
 }
 
 bool Game::linkTwoPoint(Point * a, Point * b)
@@ -154,8 +154,8 @@ bool Game::linkTwoPoint(Point * a, Point * b)
 	}
 	if (this->isTwoPointLinkable(a, b))
 	{
-		this->getPoint(a->x, a->y).setType(EMPTY_POINT);
-		this->getPoint(b->x, b->y).setType(EMPTY_POINT);
+		this->getPoint(a->x, a->y)->setType(EMPTY_POINT);
+		this->getPoint(b->x, b->y)->setType(EMPTY_POINT);
 		return true;
 	}
 	return false;
@@ -163,11 +163,12 @@ bool Game::linkTwoPoint(Point * a, Point * b)
 
 void Game::printMatrix()
 {
+	cout << endl;
 	for (int y = 0; y < this->height; y++)
 	{
 		for (int x = 0; x < this->width; x++)
 		{
-			int type = this->getPoint(x, y).getType();
+			int type = this->getPoint(x, y)->getType();
 			if (type == EMPTY_POINT)
 			{
 				cout << "- ";
