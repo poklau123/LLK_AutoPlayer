@@ -112,7 +112,7 @@ vector<int> ImgProc::getSeries()
 					score += this->imgcompare(this->mats[type_container[i]], _target_mat);
 				}
 				score /= type_container.size();
-				if (score > 12)
+				if (score > 13)
 				{
 					//cv::imshow("mat1", _source_mat);
 					//cv::imshow("mat2", _target_mat);

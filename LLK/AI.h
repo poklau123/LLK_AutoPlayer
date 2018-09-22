@@ -1,6 +1,7 @@
 #pragma once
 #include "Game.h"
 #include <map>
+#include <algorithm>
 
 class AI
 {
@@ -11,6 +12,8 @@ public:
 	AI(Game* game);
 
 	vector<Point> play();
+
+	vector<Point> calc();
 
 	~AI();
 };

@@ -22,6 +22,7 @@ vector<Point> AI::play()
 	vector<Point> points;
 	while (this->classify.size() > 0)
 	{
+		bool flag = false;		//当前是否有解
 		for (map<int, vector<Point>>::iterator classify_it = this->classify.begin(); classify_it != this->classify.end();)
 		{
 			vector<Point>* group = &(classify_it->second);
@@ -39,6 +40,8 @@ vector<Point> AI::play()
 
 						group->erase(group->begin() + j);
 						group->erase(group->begin() + i);
+
+						flag = true;
 					}
 				}
 			}
@@ -50,6 +53,24 @@ vector<Point> AI::play()
 				classify_it++;
 			}
 		}
+		if (!flag)
+		{
+			return vector<Point>();
+		}
+	}
+	return points;
+}
+
+vector<Point> AI::calc()
+{
+	vector<Point> points = this->play();
+	while (points.size() == 0)
+	{
+		for (int i = 0; i < this->classify.size(); i++)
+		{
+			std::random_shuffle(this->classify.find(i)->second.begin(), this->classify.find(i)->second.end());
+		}
+		points = this->play();
 	}
 	return points;
 }

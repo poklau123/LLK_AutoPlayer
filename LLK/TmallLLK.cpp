@@ -11,7 +11,7 @@ void TmailLLK::tap(int x, int y)
 	str.Format(L"adb shell input tap %d %d", (int)x_offset, (int)y_offset);
 	LPWSTR cmd = (LPWSTR)(LPCTSTR)str;
 	CreateProcess(NULL, cmd, NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &this->si, &this->pi);
-	WaitForSingleObject(this->pi.hProcess, 200);
+	WaitForSingleObject(this->pi.hProcess, 100);
 }
 
 CString TmailLLK::screenshot(const char* filename)
