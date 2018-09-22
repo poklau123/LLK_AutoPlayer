@@ -27,24 +27,15 @@
     <ClInclude Include="AI.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="TmallLLK.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="resource1.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="resource2.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CAdbShell.h">
+    <ClInclude Include="ImgProc.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LLK.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Point.cpp">
@@ -56,7 +47,13 @@
     <ClCompile Include="AI.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CAdbShell.cpp">
+    <ClCompile Include="Main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TmallLLK.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ImgProc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
